@@ -10,6 +10,9 @@ const sub = document.getElementById("sub");
 const won = document.getElementById("resultText");
 const errorCheck = document.getElementById("error-checkbox");
 let balance = 100;
+if (localStorage.getItem("balance")) {
+  balance = localStorage.getItem("balance")
+}
 balanceHtml.innerHTML = balance;
 
 // check random number
@@ -133,7 +136,8 @@ document.getElementById("bet").addEventListener("click", (e) => {
     moneyUsed = checkWinner(moneyUsed, answer);
     balance += moneyUsed;
     balanceHtml.innerHTML = balance;
-    moneyPut.value = Math.floor(balance / 5)
+    moneyPut.value = 5
+    localStorage.setItem("balance", balance)
   } else {
     errorCheck.innerHTML = "Please select some option";
   }

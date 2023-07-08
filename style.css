@@ -84,6 +84,9 @@ input[type="number"] {
   height: 4rem;
   line-height: 4rem;
 }
+input[type=radio]{
+  border-color: black;
+}
 
 /* dice animation  */
 .dice-wrap {
