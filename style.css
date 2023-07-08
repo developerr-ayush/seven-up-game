@@ -38,6 +38,8 @@ input[type="number"] {
 }
 
 .form-check {
+  position: relative;
+  cursor: pointer;
   margin: 0;
   padding: 0;
 }
@@ -84,7 +86,7 @@ input[type="number"] {
   height: 4rem;
   line-height: 4rem;
 }
-input[type=radio]{
+input[type="radio"] {
   border-color: black;
 }
 
@@ -207,4 +209,15 @@ input[type=radio]{
 .six {
   transform: rotateX(90deg) translateZ(calc(var(--width) / 2));
   z-index: 6;
+}
+.h6,
+h6 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.wrap {
+  margin-top: 1.5rem;
+}
+.wrap ul {
+  margin-bottom: 0;
 }

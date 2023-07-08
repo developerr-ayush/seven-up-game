@@ -11,7 +11,7 @@ const won = document.getElementById("resultText");
 const errorCheck = document.getElementById("error-checkbox");
 let balance = 100;
 if (localStorage.getItem("balance")) {
-  balance = localStorage.getItem("balance")
+  balance = Number(localStorage.getItem("balance"))
 }
 balanceHtml.innerHTML = balance;
 
@@ -24,6 +24,7 @@ function checkNumber() {
   let n1 = Math.floor(Math.random() * 6) + 1;
   let n2 = Math.floor(Math.random() * 6) + 1;
   let number = n1 + n2;
+  console.log(number)
   // dice rotation 
   rotateDice(n1, "#dice1");
   rotateDice(n2, "#dice2");
@@ -32,7 +33,7 @@ function checkNumber() {
     resultNumber.innerHTML = number
   }, 2000);
   // returning result 
-  return number >= 7 ? (number == 7 ? "prefect" : "up") : "down";
+  return number == 7 ? "perfect" : number > 7 ? "up" : "down";
 
 }
 // check winner
@@ -136,7 +137,7 @@ document.getElementById("bet").addEventListener("click", (e) => {
     moneyUsed = checkWinner(moneyUsed, answer);
     balance += moneyUsed;
     balanceHtml.innerHTML = balance;
-    moneyPut.value = 5
+    moneyPut.value = 10
     localStorage.setItem("balance", balance)
   } else {
     errorCheck.innerHTML = "Please select some option";
