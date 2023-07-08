@@ -123,16 +123,17 @@ sub.addEventListener("click", (e) => {
 document.getElementById("bet").addEventListener("click", (e) => {
   e.preventDefault();
   let moneyUsed = Number(moneyPut.value);
-  if (!(moneyUsed <= balance) || moneyUsed == 0) {
+  if (!(moneyUsed <= balance) || moneyUsed <= 0) {
     document.getElementById("errorAmount").innerHTML = "please enter a valid number"
   } else if (inputChecked()) {
+    document.getElementById("errorAmount").innerHTML = ""
     errorCheck.innerHTML = "";
     balance -= moneyUsed;
     let answer = checkNumber();
     moneyUsed = checkWinner(moneyUsed, answer);
     balance += moneyUsed;
     balanceHtml.innerHTML = balance;
-    moneyPut.value = 0
+    moneyPut.value = Math.floor(balance / 5)
   } else {
     errorCheck.innerHTML = "Please select some option";
   }
