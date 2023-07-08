@@ -71,7 +71,7 @@ function inputChecked() {
 // dice rotation 
 function rotateDice(number, element) {
   // showing popup 
-  animation.style.display = "block";
+  animation.style.display = "flex";
   // dice rotation animation 
   setTimeout(() => {
     // generating dice axis
@@ -120,16 +120,19 @@ sub.addEventListener("click", (e) => {
   moneyPut.value <= 5 ? "" : (moneyPut.value = Number(moneyPut.value) - 5);
 });
 // form submit event 
-form.addEventListener("submit", (e) => {
+document.getElementById("bet").addEventListener("click", (e) => {
   e.preventDefault();
   let moneyUsed = Number(moneyPut.value);
-  if (inputChecked()) {
+  if (!(moneyUsed <= balance) || moneyUsed == 0) {
+    document.getElementById("errorAmount").innerHTML = "please enter a valid number"
+  } else if (inputChecked()) {
     errorCheck.innerHTML = "";
     balance -= moneyUsed;
     let answer = checkNumber();
     moneyUsed = checkWinner(moneyUsed, answer);
     balance += moneyUsed;
     balanceHtml.innerHTML = balance;
+    moneyPut.value = 0
   } else {
     errorCheck.innerHTML = "Please select some option";
   }

@@ -36,6 +36,7 @@
                                 <span class="material-symbols-outlined"> add </span>
                             </button>
                         </div>
+                        <div class="errorAmount text-danger" id="errorAmount"></div>
                     </div>
                 </div>
                 <div class="col-12">
@@ -81,112 +82,114 @@
             </div>
         </form>
         <div class="running" id="animation">
-            <div class="contrats mb-2">
-                <h2 class="fw-bold bg-primary m-0 text-light px-2 text-center">Number is <span class="text-warning"
-                        id="resultNumber">please wait</span></h2>
-                <h3 class="fw-bold bg-info m-0 text-light px-2 text-center" id="resultText">Your result will appear here
-                </h3>
-            </div>
-            <div class="dice-wrap">
-                <div class="dice" id="dice1">
-                    <div class="side one">
-                        <span class="dot"></span>
-                    </div>
-                    <div class="side two">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <div class="side three">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <div class="side four">
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                    <div class="side five">
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                        </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                    <div class="side six">
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
+            <div class="modal-wrap">
+                <div class="contrats mb-2">
+                    <h2 class="fw-bold bg-primary m-0 text-light px-2 text-center">Number is <span class="text-warning"
+                            id="resultNumber">please wait</span></h2>
+                    <h3 class="fw-bold bg-info m-0 text-light px-2 text-center" id="resultText">Your result will appear
+                        here </h3>
                 </div>
-                <div class="dice" id="dice2">
-                    <div class="side one">
-                        <span class="dot"></span>
+                <div class="dice-wrap">
+                    <div class="dice" id="dice1">
+                        <div class="side one">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="side two">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="side three">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="side four">
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="side five">
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="side six">
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="side two">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <div class="side three">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                    <div class="side four">
-                        <div class="kolona">
+                    <div class="dice" id="dice2">
+                        <div class="side one">
+                            <span class="dot"></span>
+                        </div>
+                        <div class="side two">
                             <span class="dot"></span>
                             <span class="dot"></span>
                         </div>
-                        <div class="kolona">
+                        <div class="side three">
                             <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                    <div class="side five">
-                        <div class="kolona">
                             <span class="dot"></span>
                             <span class="dot"></span>
                         </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
+                        <div class="side four">
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
                         </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
+                        <div class="side five">
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="side six">
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <div class="kolona">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
+                        <div class="side six">
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="kolona">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
