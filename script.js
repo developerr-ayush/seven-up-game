@@ -143,3 +143,9 @@ document.getElementById("bet").addEventListener("click", (e) => {
     errorCheck.innerHTML = "Please select some option";
   }
 });
+document.getElementById("reset").addEventListener("click",e=>{
+  balance=100;
+  localStorage.setItem("balance",100)
+  balanceHtml.innerHTML = balance;
+
+})
