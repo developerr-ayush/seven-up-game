@@ -86,6 +86,9 @@ input[type="number"] {
   height: 4rem;
   line-height: 4rem;
 }
+.contrats h3 {
+  font-size: 1.4rem;
+}
 input[type="radio"] {
   border-color: black;
 }
